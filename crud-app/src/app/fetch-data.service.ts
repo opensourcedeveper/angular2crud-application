@@ -10,10 +10,18 @@ export class FetchDataService {
 
   // private _url: string = "http://all-interview-questions.com/V1/Api/fetchAboutus/";
   private _url: string = "https://jsonplaceholder.typicode.com/posts/2";
+  private _url1: string = "https://jsonplaceholder.typicode.com/posts";
   constructor(private _http: Http) { }
 
   getData() {
     return this._http.get(this._url)
+      .map((response: Response) => response.json())
+      .catch(this._errorHandler);
+  }
+
+
+  getDataList() {
+    return this._http.get(this._url1)
       .map((response: Response) => response.json())
       .catch(this._errorHandler);
   }
