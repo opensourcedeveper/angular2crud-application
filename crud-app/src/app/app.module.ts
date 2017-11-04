@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
+import { FetchDataService } from './fetch-data.service';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { ServicesComponent } from './services/services.component';
       { path: 'about', component: AboutComponent },
       { path: 'services', component : ServicesComponent }  ])
   ],
-  providers: [],
+  providers: [FetchDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
-import { Component, OnInit} from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { FetchDataService } from '../fetch-data.service';
 
 @Component({
   selector: 'app-about',
@@ -8,9 +8,12 @@ import { Component, OnInit} from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  fetchData : string;
+
+  constructor(private _fetchdataservice : FetchDataService ) { }
 
   ngOnInit() {
+     this.fetchData = this._fetchdataservice.getData();
   }
 
 }
