@@ -10,10 +10,12 @@ export class AboutComponent implements OnInit {
 
   fetchData : string;
 
-  constructor(private _fetchdataservice : FetchDataService ) { }
+  constructor(private _fetchdataservice: FetchDataService) { }
 
   ngOnInit() {
-     this.fetchData = this._fetchdataservice.getData();
+    //  this.fetchData = this._fetchdataservice.getData();
+    this._fetchdataservice.getData()
+      .subscribe(resfetchData => this.fetchData = resfetchData);
   }
 
 }
